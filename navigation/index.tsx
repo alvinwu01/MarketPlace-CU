@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
- import { FontAwesome } from '@expo/vector-icons';
+ import { Ionicons } from '@expo/vector-icons'; 
  import { AntDesign } from '@expo/vector-icons'; 
  import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
  import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
@@ -103,7 +103,7 @@
          component={ProfileScreen}
          options={{
            title: 'Search',
-           tabBarIcon: ({ color }) => <TabBarIcon1 name="search1" color={color} />,
+           tabBarIcon: ({ color }) => <Ionicons name="person" style={{ marginBottom: -3 }} size={30} color={color} />,
          }}
        />
      </BottomTab.Navigator>
