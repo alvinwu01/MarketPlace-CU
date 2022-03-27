@@ -1,7 +1,15 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
+import React from "react";
 
-export default function TabThreeScreen() {
+export default function TabThreeScreen({navigation}) {
+  React.useEffect(() => {
+    navigation.setOptions({
+      headerSearchBarOptions: {
+        // search bar options
+      }
+    });
+  }, [navigation]);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab Three</Text>

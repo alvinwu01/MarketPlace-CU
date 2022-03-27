@@ -11,22 +11,22 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-      <LoadItem thing = {DATA}/>
-      <LoadItem thing = {DATA}/>
-      <LoadItem thing = {DATA}/>
-      <LoadItem thing = {DATA}/>
-      <LoadItem thing = {DATA}/>
-      <LoadItem thing = {DATA}/>
-      <LoadItem thing = {DATA}/>
+      <LoadItem thing = {DATA} heading="Hot Items"/>
+      <LoadItem thing = {DATA} heading="New Items"/>
+      <LoadItem thing = {DATA} heading="For the Low"/>
+      <LoadItem thing = {DATA} heading="Discounted"/>
+      <LoadItem thing = {DATA} heading="Most viewed"/>
+      <LoadItem thing = {DATA} heading="Hello"/>
+      <LoadItem thing = {DATA} heading="Something Else"/>
       </ScrollView>
     </SafeAreaView>
   );
 }
 
 
-const LoadItem = ({thing}) => (
+const LoadItem = ({thing,heading}) => (
     <View style={styles.rowcontainer}>
-      <Text style = {styles.headingstyle}> Hello </Text>
+      <Text style = {styles.headingstyle}> {heading} </Text>
         <FlatList 
           directionalLockEnabled = {true}
           horizontal={true}

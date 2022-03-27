@@ -106,6 +106,7 @@
            title: 'Search',
            tabBarIcon: ({ color }) => <TabBarIcon1 name="search1" color={color} />,
          }}
+         
        />
        <BottomTab.Screen
          name="Profile"
