@@ -5,6 +5,8 @@
  */
  import { Ionicons } from '@expo/vector-icons'; 
  import { AntDesign } from '@expo/vector-icons'; 
+ import { FontAwesome5 } from '@expo/vector-icons';
+
  import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
  import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -82,7 +84,7 @@
                style={({ pressed }) => ({
                  opacity: pressed ? 0.5 : 1,
                })}>
-                 <AntDesign name="frown" size={24} color="black" style={{ marginRight: 20 }} />
+               <FontAwesome5 name="filter" size={24} color="black" style = {{marginRight:10}}/>
              </Pressable>
            ),
          })}

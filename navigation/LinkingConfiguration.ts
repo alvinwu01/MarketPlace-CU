@@ -39,6 +39,7 @@
        },
        Categories: 'Categories',
        NotFound: '*',
+       Item: 'Item'
      },
    },
  };

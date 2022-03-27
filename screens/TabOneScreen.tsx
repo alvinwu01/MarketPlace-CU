@@ -23,7 +23,6 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
 }
 
 
-
 const LoadItem = ({thing}) => (
     <View style={styles.rowcontainer}>
       <Text style = {styles.headingstyle}> Hello </Text>
