@@ -40,6 +40,7 @@
        Categories: 'Categories',
        NotFound: '*',
        Item: 'Item',
+       Results: 'Results',
      },
    },
  };

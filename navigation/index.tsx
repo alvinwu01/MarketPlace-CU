@@ -22,6 +22,10 @@
  import TabThreeScreen from '../screens/TabThreeScreen';
  import ProfileScreen from '../screens/ProfileScreen';
  import ItemScreen from '../screens/ItemScreen';
+ import ResultsScreen from '../screens/ResultsScreen';
+
+
+
  import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
  import LinkingConfiguration from './LinkingConfiguration';
  
@@ -47,6 +51,7 @@
        <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
        <Stack.Screen name="Item" component={ItemScreen} options={{ title: 'MarketPlace@CU' }} />
+       <Stack.Screen name="Results" component={ResultsScreen} options={{ title: 'MarketPlace@CU' }} />
        <Stack.Group screenOptions={{ presentation: 'modal' }}>
          <Stack.Screen name="Categories" component={CategoriesScreen} />
        </Stack.Group>

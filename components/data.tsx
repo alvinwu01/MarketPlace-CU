@@ -6,7 +6,7 @@ export const DATA = [
       price: 100,
       info: "Really comfy in the winter.",
       userid: 1,
-      categories: ["hoodies","misc"]
+      categories: ["hoodies"]
     },
     {
       id: 2,
@@ -15,7 +15,7 @@ export const DATA = [
       price: 100,
       info: "barely worn. bought wrong size.",
       userid: 1,
-      categories: ["jeans","misc"]
+      categories: ["jeans"]
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ export const DATA = [
       price: 100,
       info: "Barely Worn! STEEEEAL GET IT BEFORE ITS GONE",
       userid: 1,
-      categories: ["shoes","misc"]
+      categories: ["shoes"]
     },
     {
       id: 5,
