@@ -37,7 +37,7 @@
           },
          },
        },
-       Modal: 'modal',
+       Categories: 'Categories',
        NotFound: '*',
      },
    },

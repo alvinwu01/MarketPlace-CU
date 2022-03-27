@@ -13,7 +13,7 @@
  
  import Colors from '../constants/Colors';
  import useColorScheme from '../hooks/useColorScheme';
- import ModalScreen from '../screens/ModalScreen';
+ import CategoriesScreen from '../screens/CategoriesScreen';
  import NotFoundScreen from '../screens/NotFoundScreen';
  import TabOneScreen from '../screens/TabOneScreen';
  import TabTwoScreen from '../screens/TabTwoScreen';
@@ -44,7 +44,7 @@
        <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
        <Stack.Group screenOptions={{ presentation: 'modal' }}>
-         <Stack.Screen name="Modal" component={ModalScreen} />
+         <Stack.Screen name="Categories" component={CategoriesScreen} />
        </Stack.Group>
      </Stack.Navigator>
    );
@@ -73,7 +73,7 @@
            tabBarIcon: ({color}) => <TabBarIcon1 name="home"  color = {color} />,
            headerRight: () => (
              <Pressable
-               onPress={() => navigation.navigate('Modal')}
+               onPress={() => navigation.navigate('Categories')}
                style={({ pressed }) => ({
                  opacity: pressed ? 0.5 : 1,
                })}>
