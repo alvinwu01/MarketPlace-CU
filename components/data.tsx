@@ -6,6 +6,7 @@ export const DATA = [
       price: 100,
       info: "Really comfy in the winter.",
       userid: 1,
+      categories: ["hoodies","misc"]
     },
     {
       id: 2,
@@ -14,14 +15,16 @@ export const DATA = [
       price: 100,
       info: "barely worn. bought wrong size.",
       userid: 1,
+      categories: ["jeans","misc"]
     },
     {
       id: 3,
       name:"Beyond Good and Evil Book",
       image: "https://images-na.ssl-images-amazon.com/images/I/414yS8wldNL._SX320_BO1,204,203,200_.jpg",
       price: 10,
-      info: "Great book. For the low.",
-      userid: 1
+      info: "Great book. For the low. Reallllllllllllllllllllly long ggggggggggggggg sentence. I do not know what to write. Testing. Testing. 1. 2. 3. Ayayayayayaya. Hello. TestingASdasfdsgjsgnsdjgndfklgndgnkdgfnldfngkdnglkdfnglkdfngkldfngkldfngkdfngkldfgnkldfgnlkdfngkldfngkldfnglkdiugjghkvjhvuuiggiuguigiug",
+      userid: 1,
+      categories: ["books","misc"]
     },
     {
       id: 4,
@@ -30,6 +33,7 @@ export const DATA = [
       price: 100,
       info: "Barely Worn! STEEEEAL GET IT BEFORE ITS GONE",
       userid: 1,
+      categories: ["shoes","misc"]
     },
     {
       id: 5,
@@ -38,5 +42,6 @@ export const DATA = [
       price: 1000,
       info: "Brand New in Box. Limited edition.",
       userid: 1,
+      categories: ["misc"]
     },
   ];

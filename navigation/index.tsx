@@ -96,7 +96,12 @@
          component={TabTwoScreen}
          options={{
            title: 'Sell',
+           headerTitle: 'Marketplace@CU',
            tabBarIcon: ({ color }) => <TabBarIcon1 name="camera" color={color} />,
+           headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30,
+           },
          }}
        />
        <BottomTab.Screen
@@ -104,7 +109,12 @@
          component={TabThreeScreen}
          options={{
            title: 'Search',
+           headerTitle: 'Marketplace@CU',
            tabBarIcon: ({ color }) => <TabBarIcon1 name="search1" color={color} />,
+           headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30,
+          }
          }}
          
        />
@@ -113,7 +123,12 @@
          component={ProfileScreen}
          options={{
            title: 'Profile',
+           headerTitle: 'Marketplace@CU',
            tabBarIcon: ({ color }) => <Ionicons name="person" style={{ marginBottom: -3 }} size={30} color={color} />,
+           headerTitleStyle: {
+             fontWeight: 'bold',
+             fontSize: 30,
+           }
          }}
        />
      </BottomTab.Navigator>

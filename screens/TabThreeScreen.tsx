@@ -1,18 +1,14 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
 import React from "react";
+import { Searchbar } from 'react-native-paper';
 
 export default function TabThreeScreen({navigation}) {
-  React.useEffect(() => {
-    navigation.setOptions({
-      headerSearchBarOptions: {
-        // search bar options
-      }
-    });
-  }, [navigation]);
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Three</Text>
+      <Searchbar>
+        <Text style = {styles.title}> Search descriptions </Text>
+      </Searchbar>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     </View>
   );
@@ -23,10 +19,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: "5%",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '200',
   },
   separator: {
     marginVertical: 30,
