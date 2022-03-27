@@ -69,15 +69,20 @@
          name="TabOne"
          component={TabOneScreen}
          options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-           title: 'Home',
-           tabBarIcon: ({color}) => <TabBarIcon1 name="home"  color = {color} />,
-           headerRight: () => (
+           headerTitle: "Marketplace@CU",
+           headerTitleStyle: {
+             fontWeight: 'bold',
+             fontSize: 30,
+            },
+            title: 'MarketPlace',
+            tabBarIcon: ({color}) => <TabBarIcon1 name="home"  color = {color} />,
+            headerRight: () => (
              <Pressable
                onPress={() => navigation.navigate('Categories')}
                style={({ pressed }) => ({
                  opacity: pressed ? 0.5 : 1,
                })}>
- <AntDesign name="frown" size={24} color="black" style={{ marginRight: 20 }} />
+                 <AntDesign name="frown" size={24} color="black" style={{ marginRight: 20 }} />
              </Pressable>
            ),
          })}
@@ -102,7 +107,7 @@
          name="Profile"
          component={ProfileScreen}
          options={{
-           title: 'Search',
+           title: 'Profile',
            tabBarIcon: ({ color }) => <Ionicons name="person" style={{ marginBottom: -3 }} size={30} color={color} />,
          }}
        />
