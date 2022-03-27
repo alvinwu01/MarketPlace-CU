@@ -1,8 +1,9 @@
-import { StyleSheet,SafeAreaView,FlatList,Image,ScrollView } from 'react-native';
+import { StyleSheet,SafeAreaView,FlatList,Image,ScrollView, Pressable} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import React from "react";
 import PropTypes from "prop-types";
 
-import {DATA} from "../components/constants";
+import {DATA} from "../components/data";
 import { Text, View} from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
@@ -50,18 +51,32 @@ const LoadItem = ({thing}) => (
 )
 
 const renderItem = ({ item }) => (
-  <ITEM image= {item.image} />
+  <ITEM image= {item.image} itemid={item.id} />
 )
 
-const ITEM  = ({image}) => (
-  <View style= {styles.rowcontainer}>
-    <Image style={{width: 100, height: 100}} source = {{uri: image}}/>
-  </View>
-)
+function ITEM({image,itemid}){
+  const navigation = useNavigation();
+  return(
+  <View>  
+  <Pressable
+  onPress={() => navigation.navigate( 'Item', {name:itemid}) }
+  style={({ pressed }) => ({
+    opacity: pressed ? 0.5 : 1,
+  })}>
+  <Image style={{width: 100, height: 100}} source = {{uri: image}}/>
+</Pressable>   
+</View>
+  )
+}
 
 ITEM.propTypes = {
   image: PropTypes.string
 }
+
+
+// Wrap and export
+
+
 
 const styles = StyleSheet.create({
   container: {

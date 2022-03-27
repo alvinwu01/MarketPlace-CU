@@ -39,7 +39,7 @@
        },
        Categories: 'Categories',
        NotFound: '*',
-       Item: 'Item'
+       Item: 'Item',
      },
    },
  };
