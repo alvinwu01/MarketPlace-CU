@@ -1,4 +1,16 @@
-export const DATA = [
+export type DATAprops = 
+  {
+    id: number,
+    name: string,
+    image: string,
+    price: number,
+    info: string,
+    userid:number,
+    categories: Array<string>
+  }
+
+
+export const DATA:Array<DATAprops> = [
     {
       id: 1,
       name: "Columbia Hoodie",

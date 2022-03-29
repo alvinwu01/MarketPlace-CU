@@ -3,7 +3,7 @@ import { Text, View } from '../components/Themed';
 import React from "react";
 import { Searchbar } from 'react-native-paper';
 
-export default function TabThreeScreen({navigation}) {
+export default function TabThreeScreen({}) {
   return (
     <View style={styles.container}>
       <Searchbar>

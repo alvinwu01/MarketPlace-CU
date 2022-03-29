@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from "react";
 import PropTypes from "prop-types";
 
-import {DATA} from "../components/data";
+import {DATA,DATAprops} from "../components/data";
 import { Text, View} from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
@@ -24,7 +24,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
 }
 
 
-const LoadItem = ({thing,heading}) => (
+const LoadItem = ({thing,heading}:{thing: typeof DATA,heading:string}) => (
     <View style={styles.rowcontainer}>
       <Text style = {styles.headingstyle}> {heading} </Text>
         <FlatList 
@@ -46,20 +46,20 @@ const LoadItem = ({thing,heading}) => (
             />
         );
     }}
-    keyExtractor = {item => item.id}/>
+    />
     </View>
 )
 
-const renderItem = ({ item }) => (
+const renderItem = ({ item }:{item: DATAprops}) => (
   <ITEM image= {item.image} itemid={item.id} />
 )
 
-function ITEM({image,itemid}){
+function ITEM({image,itemid}:{ image:string,itemid:number}){
   const navigation = useNavigation();
   return(
   <View>  
   <Pressable
-  onPress={() => navigation.navigate( 'Item', {name:itemid}) }
+  onPress={() => navigation.navigate("Item", {name:itemid}) }
   style={({ pressed }) => ({
     opacity: pressed ? 0.5 : 1,
   })}>

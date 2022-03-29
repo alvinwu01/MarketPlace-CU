@@ -2,13 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet,ScrollView,Image,Pressable } from 'react-native';
 import { useNavigation,useRoute } from '@react-navigation/native';
 import { Entypo } from '@expo/vector-icons'; 
+import { RootStackScreenProps } from '../types';
 
 
 import {DATA} from "../components/data";
 import { Text, View} from '../components/Themed';
 
 
-export default function ItemScreen({navigation,route}) {
+export default function ItemScreen({navigation,route}:RootStackScreenProps<'Item'>) {
     return (
       <View style={styles.container}>
         <RenderPage/>
@@ -18,7 +19,8 @@ export default function ItemScreen({navigation,route}) {
 
 function RenderPage(){
     const route = useRoute()
-    const itemID = route.params.name
+    const navigation = useNavigation()
+    const itemID = route.params?.name
     var thisItem = findElement(itemID)
     var id = thisItem?.id
     var name = thisItem?.name
@@ -51,7 +53,7 @@ function RenderPage(){
         <View style = {[styles.rowcontainer1,{flex:1.5}]}> 
             <View style ={styles.columncontainer}>
                 <Pressable
-                    onPress={() => navigation.navigate( 'Item', {name:itemid}) }
+                    onPress={() => navigation.navigate( 'Item', {name:id}) }
                     style={({ pressed }) => ({
                         opacity: pressed ? 0.5 : 1,
                     })}>
@@ -63,7 +65,7 @@ function RenderPage(){
     )
 }
 
-function findElement(id) {
+function findElement(id:number) {
     for(let i = 0; i< DATA.length ; i++){
         if (DATA[i].id == id) {
             return DATA[i];

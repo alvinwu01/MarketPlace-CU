@@ -26,7 +26,7 @@
 
 
 
- import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
+ import { RootStackParamList, RootTabParamList, RootTabScreenProps,RootStackScreenProps } from '../types';
  import LinkingConfiguration from './LinkingConfiguration';
  
  export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -51,7 +51,7 @@
        <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
        <Stack.Screen name="Item" component={ItemScreen} options={{ title: 'MarketPlace@CU' }} />
-       <Stack.Screen name="Results" component={ResultsScreen} options={{ title: 'MarketPlace@CU' }} />
+       <Stack.Screen name="Results" component={ResultsScreen} options={ ({navigation}:RootStackScreenProps<'Results'>) => ({ title: 'MarketPlace@CU' })} />
        <Stack.Group screenOptions={{ presentation: 'modal' }}>
          <Stack.Screen name="Categories" component={CategoriesScreen} />
        </Stack.Group>
@@ -77,7 +77,7 @@
        <BottomTab.Screen
          name="TabOne"
          component={TabOneScreen}
-         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
+         options={ ({ navigation }: RootTabScreenProps<'TabOne'>) => ({
            headerTitle: "Marketplace@CU",
            headerTitleStyle: {
              fontWeight: 'bold',
@@ -99,7 +99,7 @@
        <BottomTab.Screen
          name="TabTwo"
          component={TabTwoScreen}
-         options={{
+         options= { {
            title: 'Sell',
            headerTitle: 'Marketplace@CU',
            tabBarIcon: ({ color }) => <TabBarIcon1 name="camera" color={color} />,
@@ -107,8 +107,7 @@
             fontWeight: 'bold',
             fontSize: 30,
            },
-         }}
-       />
+         }}/>
        <BottomTab.Screen
          name="TabThree"
          component={TabThreeScreen}

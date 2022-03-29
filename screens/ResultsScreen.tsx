@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet,Image,FlatList,Pressable } from 'react-native';
 import { useNavigation,useRoute } from '@react-navigation/native';
-import {DATA} from '../components/data';
-
+import {DATA,DATAprops} from '../components/data';
+import { RootStackScreenProps } from '../types';
 import { Text, View } from '../components/Themed';
 
-export default function ResultsScreen({navigation,route}) {
+export default function ResultsScreen({navigation,route}:RootStackScreenProps<"Results">) {
   return (
     <View style={styles.container}>
             <Text style={styles.headingstyle}> Results </Text>
@@ -34,21 +34,20 @@ const LoadItem1 = () => (
                 }}
             />
         );
-    }}
-    keyExtractor = {item => item.id}/>
+    }}/>
     </View>
 )
 
-const renderItem = ({ item }) => (
+const renderItem = ({ item }:{item: DATAprops}) => (
   <ITEM image= {item.image} itemid={item.id} />
 )
 
-function ITEM({image,itemid}){
+function ITEM({image,itemid}:{image: string, itemid: number}){
     const navigation = useNavigation()
   return(
   <View>  
   <Pressable
-  onPress={() => navigation.navigate( 'Item', {name:itemid}) }
+  onPress={() => navigation.navigate('Item', {name:itemid}) }
   style={({ pressed }) => ({
     opacity: pressed ? 0.5 : 1,
   })}>

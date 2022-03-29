@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet,SafeAreaView,Image,Pressable,Modal } from 'react-native';
+import { RootStackScreenProps } from '../types';
 import { useNavigation,useRoute } from '@react-navigation/native';
 
 
 import { Text, View } from '../components/Themed';
 
-export default function ModalScreen({navigation}) {
+export default function ModalScreen( {navigation}: RootStackScreenProps<'Categories'>  ) {
   return (
     <SafeAreaView style={styles.container}>
       <View style = {styles.rowcontainer}>
