@@ -8,12 +8,13 @@ import { Text, View } from '../components/Themed';
 
 export default function ModalScreen( {navigation}: RootStackScreenProps<'Categories'>  ) {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style = {styles.rowcontainer}>
         
       <View style={styles.rowitem1}>
       <Pressable
-                    onPress={() => navigation.navigate( 'Results', {results:["shirts"]}) }
+                    onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["shirts"]}),console.log(navigation.getState())}
+                   }
                     style={({ pressed }) => ({
                         opacity: pressed ? 0.5 : 1,
                     })}>
@@ -23,7 +24,7 @@ export default function ModalScreen( {navigation}: RootStackScreenProps<'Categor
 
       <View style={styles.rowitem2}>
       <Pressable
-                    onPress={() => {navigation.navigate( 'Results', {results:["hoodies"]})
+                    onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["hoodies"]})
                   }}
                     style={({ pressed }) => ({
                         opacity: pressed ? 0.5 : 1,
@@ -36,7 +37,7 @@ export default function ModalScreen( {navigation}: RootStackScreenProps<'Categor
       <View style = {styles.rowcontainer}>      
       <View style={styles.rowitem1}>
       <Pressable
-                    onPress={() => {navigation.navigate( 'Results', {results:["jeans"]})
+                    onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["jeans"]})
                   }}
                     style={({ pressed }) => ({
                         opacity: pressed ? 0.5 : 1,
@@ -45,7 +46,7 @@ export default function ModalScreen( {navigation}: RootStackScreenProps<'Categor
         </Pressable>
         </View>
       <View style={styles.rowitem2}>
-      <Pressable onPress={() => {navigation.navigate( 'Results', {results:["shoes"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
+      <Pressable onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["shoes"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
         <Image style={{width:"100%", height:"100%"}} resizeMode="contain" source ={{uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Cn2RCav5VplzFbSa6moWIYyLe_agqTZtSo25SVuCdHMJxOJUhDNOAsylWj0CI5zt178&usqp=CAU"}} />
         </Pressable>
         </View>
@@ -53,13 +54,13 @@ export default function ModalScreen( {navigation}: RootStackScreenProps<'Categor
 
       <View style = {styles.rowcontainer}>
       <View style={styles.rowitem1}>
-      <Pressable onPress={() => {navigation.navigate( 'Results', {results:["books"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
+      <Pressable onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["books"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
         <Image style={{width:"100%", height:"100%"}} resizeMode="contain" source ={{uri: "https://media.istockphoto.com/vectors/book-icon-vector-id1254373900?k=20&m=1254373900&s=170667a&w=0&h=OQ6JNrjZiJRrBIO2WUs9EJPdJCN8mDAnyPKOD_3sseU="}} />
         </Pressable>
       </View>
 
       <View style={styles.rowitem2}>
-      <Pressable onPress={() => {navigation.navigate( 'Results', {results:["misc"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
+      <Pressable onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["misc"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
         <Image style={{width:"100%", height:"100%"}} resizeMode="contain" source ={{uri: "https://www.pngitem.com/pimgs/m/354-3545378_kitchen-kitchen-utensils-icon-white-background-hd-png.png"}} />
         </Pressable>
       </View>
@@ -70,7 +71,7 @@ export default function ModalScreen( {navigation}: RootStackScreenProps<'Categor
 
 
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-    </SafeAreaView>
+    </View>
   );
 }
 

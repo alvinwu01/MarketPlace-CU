@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet,Image,FlatList,Pressable } from 'react-native';
+import { Platform, StyleSheet,Image,FlatList,Pressable,modal } from 'react-native';
 import { useNavigation,useRoute } from '@react-navigation/native';
 import {DATA,DATAprops} from '../components/data';
 import { RootStackScreenProps } from '../types';

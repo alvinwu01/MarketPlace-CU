@@ -25,7 +25,6 @@
  import ResultsScreen from '../screens/ResultsScreen';
 
 
-
  import { RootStackParamList, RootTabParamList, RootTabScreenProps,RootStackScreenProps } from '../types';
  import LinkingConfiguration from './LinkingConfiguration';
  
@@ -51,7 +50,16 @@
        <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
        <Stack.Screen name="Item" component={ItemScreen} options={{ title: 'MarketPlace@CU' }} />
-       <Stack.Screen name="Results" component={ResultsScreen} options={ ({navigation}:RootStackScreenProps<'Results'>) => ({ title: 'MarketPlace@CU' })} />
+       <Stack.Screen name="Results" component={ResultsScreen} 
+       options={ ({navigation}:RootStackScreenProps<'Results'>) => ({ title: 'MarketPlace@CU', headerRight: () => (
+        <Pressable
+          onPress={() => navigation.navigate('Categories')}
+          style={({ pressed }) => ({
+            opacity: pressed ? 0.5 : 1,
+          })}>
+          <FontAwesome5 name="filter" size={24} color="black" style = {{marginRight:10}}/>
+        </Pressable>
+      ) })} />
        <Stack.Group screenOptions={{ presentation: 'modal' }}>
          <Stack.Screen name="Categories" component={CategoriesScreen} />
        </Stack.Group>
