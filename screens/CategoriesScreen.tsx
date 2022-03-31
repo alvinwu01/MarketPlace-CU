@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet,SafeAreaView,Image,Pressable,Modal } from 'react-native';
+import { Platform, StyleSheet,Image,Pressable} from 'react-native';
 import { RootStackScreenProps } from '../types';
-import { useNavigation,useRoute } from '@react-navigation/native';
+import Categories  from '../components/CategoriesItem';
 
 
-import { Text, View } from '../components/Themed';
+import {View} from '../components/Themed';
 
 export default function ModalScreen( {navigation}: RootStackScreenProps<'Categories'>  ) {
   return (
@@ -13,7 +13,7 @@ export default function ModalScreen( {navigation}: RootStackScreenProps<'Categor
         
       <View style={styles.rowitem1}>
       <Pressable
-                    onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["shirts"]}),console.log(navigation.getState())}
+                    onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["shirts"]})}
                    }
                     style={({ pressed }) => ({
                         opacity: pressed ? 0.5 : 1,
@@ -23,53 +23,28 @@ export default function ModalScreen( {navigation}: RootStackScreenProps<'Categor
   </View>
 
       <View style={styles.rowitem2}>
-      <Pressable
-                    onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["hoodies"]})
-                  }}
-                    style={({ pressed }) => ({
-                        opacity: pressed ? 0.5 : 1,
-                    })}>
-        <Image style={{width:"100%", height:"100%"}} resizeMode="contain" source ={{uri: "https://static.vecteezy.com/system/resources/previews/002/825/339/original/home-outfit-with-hoodie-black-glyph-icon-hooded-jacket-sporty-outfit-unisex-sportswear-comfortable-homewear-and-sleepwear-silhouette-symbol-on-white-space-isolated-illustration-vector.jpg"}} />
-        </Pressable>
+      <Categories navigation={navigation} category="hoodies" image = "https://static.vecteezy.com/system/resources/previews/002/825/339/original/home-outfit-with-hoodie-black-glyph-icon-hooded-jacket-sporty-outfit-unisex-sportswear-comfortable-homewear-and-sleepwear-silhouette-symbol-on-white-space-isolated-illustration-vector.jpg" />
         </View>
       </View>
 
       <View style = {styles.rowcontainer}>      
       <View style={styles.rowitem1}>
-      <Pressable
-                    onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["jeans"]})
-                  }}
-                    style={({ pressed }) => ({
-                        opacity: pressed ? 0.5 : 1,
-                    })}>
-        <Image style={{width:"100%", height:"100%"}} resizeMode="contain" source ={{uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNF2baGvXUxeszguUpWRP3bjV9S3qYxKDzgQ&usqp=CAU"}} />
-        </Pressable>
+      <Categories navigation={navigation} category="jeans" image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNF2baGvXUxeszguUpWRP3bjV9S3qYxKDzgQ&usqp=CAU" />
         </View>
       <View style={styles.rowitem2}>
-      <Pressable onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["shoes"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
-        <Image style={{width:"100%", height:"100%"}} resizeMode="contain" source ={{uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Cn2RCav5VplzFbSa6moWIYyLe_agqTZtSo25SVuCdHMJxOJUhDNOAsylWj0CI5zt178&usqp=CAU"}} />
-        </Pressable>
+      <Categories navigation={navigation} category="shoes" image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Cn2RCav5VplzFbSa6moWIYyLe_agqTZtSo25SVuCdHMJxOJUhDNOAsylWj0CI5zt178&usqp=CAU' />
         </View>
       </View>
 
       <View style = {styles.rowcontainer}>
       <View style={styles.rowitem1}>
-      <Pressable onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["books"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
-        <Image style={{width:"100%", height:"100%"}} resizeMode="contain" source ={{uri: "https://media.istockphoto.com/vectors/book-icon-vector-id1254373900?k=20&m=1254373900&s=170667a&w=0&h=OQ6JNrjZiJRrBIO2WUs9EJPdJCN8mDAnyPKOD_3sseU="}} />
-        </Pressable>
+      <Categories navigation={navigation} category="books" image = 'https://media.istockphoto.com/vectors/book-icon-vector-id1254373900?k=20&m=1254373900&s=170667a&w=0&h=OQ6JNrjZiJRrBIO2WUs9EJPdJCN8mDAnyPKOD_3sseU=' />
       </View>
 
       <View style={styles.rowitem2}>
-      <Pressable onPress={() => {navigation.pop(),navigation.navigate( 'Results', {results:["misc"]})}} style={({ pressed }) => ({ opacity: pressed ? 0.5 : 1,})}>
-        <Image style={{width:"100%", height:"100%"}} resizeMode="contain" source ={{uri: "https://www.pngitem.com/pimgs/m/354-3545378_kitchen-kitchen-utensils-icon-white-background-hd-png.png"}} />
-        </Pressable>
+      <Categories navigation={navigation} category="misc" image = 'https://www.pngitem.com/pimgs/m/354-3545378_kitchen-kitchen-utensils-icon-white-background-hd-png.png' />
       </View>
       </View>
-
-
-
-
-
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
   );
