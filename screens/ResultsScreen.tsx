@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet,Image,FlatList,Pressable } from 'react-native';
+import { StyleSheet,Image,FlatList,Pressable } from 'react-native';
 import { useNavigation,useRoute } from '@react-navigation/native';
 import {DATA,DATAprops} from '../components/data';
 import { RootStackScreenProps } from '../types';
@@ -14,7 +13,8 @@ export default function ResultsScreen({navigation,route}:RootStackScreenProps<"R
   );
 }
 
-const LoadItem1 = () => (
+const LoadItem1 = () =>{
+  return(
     <View style={styles.rowcontainer}>
         <FlatList 
           directionalLockEnabled = {true}
@@ -36,12 +36,15 @@ const LoadItem1 = () => (
         );
     }}/>
     </View>
-)
+  )
+}
 
+//helper function to display each item 
 const renderItem = ({ item }:{item: DATAprops}) => (
   <ITEM image= {item.image} itemid={item.id} />
 )
 
+//format the item to be displayed on the page
 function ITEM({image,itemid}:{image: string, itemid: number}){
     const navigation = useNavigation()
   return(
@@ -56,7 +59,7 @@ function ITEM({image,itemid}:{image: string, itemid: number}){
 </View>
   )
 }
-
+// find items matching the filter category and return an array of dicts of those items
 function FindElement() {
     const navigation = useNavigation();
     const route = useRoute();

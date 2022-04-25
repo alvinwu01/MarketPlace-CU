@@ -1,4 +1,4 @@
-import {  StyleSheet,Image,Pressable} from 'react-native';
+import {Image,Pressable} from 'react-native';
 import { RootStackScreenProps } from '../types';
 
 export default function Categories( {navigation,image,category}: {navigation:RootStackScreenProps<'Categories'>['navigation'], image:string, category:string } ) {

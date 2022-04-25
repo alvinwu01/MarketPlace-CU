@@ -23,7 +23,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   );
 }
 
-
+// Generate html code for list of images 
 const LoadItem = ({thing,heading}:{thing: typeof DATA,heading:string}) => (
     <View style={styles.rowcontainer}>
       <Text style = {styles.headingstyle}> {heading} </Text>
@@ -50,10 +50,12 @@ const LoadItem = ({thing,heading}:{thing: typeof DATA,heading:string}) => (
     </View>
 )
 
+// Extract image and item id from data element.
 const renderItem = ({ item }:{item: DATAprops}) => (
   <ITEM image= {item.image} itemid={item.id} />
 )
 
+// Generate clickable image 
 function ITEM({image,itemid}:{ image:string,itemid:number}){
   const navigation = useNavigation();
   return(
@@ -72,11 +74,6 @@ function ITEM({image,itemid}:{ image:string,itemid:number}){
 ITEM.propTypes = {
   image: PropTypes.string
 }
-
-
-// Wrap and export
-
-
 
 const styles = StyleSheet.create({
   container: {

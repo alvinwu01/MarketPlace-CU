@@ -4,8 +4,6 @@ import React from "react";
 import { Ionicons } from '@expo/vector-icons'; 
 import { AntDesign } from '@expo/vector-icons';
 
-import PropTypes from "prop-types";
-
 import { Text, View } from '../components/Themed';
 
 export default function ProfileScreen() {
